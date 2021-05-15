@@ -1,4 +1,3 @@
-import DonuChart from "components/DonutChart";
 import BarChart from "components/BarChart";
 import DataTable from "components/DataTable";
 import Footer from "components/Footer";
