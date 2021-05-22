@@ -1,4 +1,4 @@
-package com.devsuperior.dsvendas.config.dto;
+package com.devsuperior.dsvendas.dto;
 
 import java.io.Serializable;
 import java.time.LocalDate;
