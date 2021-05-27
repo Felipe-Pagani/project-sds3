@@ -2,7 +2,6 @@ package com.devsuperior.dsvendas.dto;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 
 import com.devsuperior.dsvendas.entities.Sale;
 
@@ -13,7 +12,7 @@ public class SaleDTO implements Serializable{
 	private Integer visited;
 	private Integer deals;
 	private Double amount;
-	private Date date;
+	private LocalDate date;
 	
 	private SellerDTO seller;
 
@@ -23,13 +22,15 @@ public class SaleDTO implements Serializable{
 	}
 
 	
-	public SaleDTO(Long id, Integer visited, Integer deals, Double amount, Date date) {
+	public SaleDTO(Long id, Integer visited, Integer deals, Double amount, LocalDate date,
+			SellerDTO seller) {
 		super();
 		this.id = id;
 		this.visited = visited;
 		this.deals = deals;
 		this.amount = amount;
 		this.date = date;
+		this.setSeller(seller);
 	}
 
 
@@ -40,7 +41,7 @@ public class SaleDTO implements Serializable{
 		deals = entity.getDeals();
 		amount = entity.getAmount();
 		date = entity.getDate();
-		seller = new SellerDTO(entity.getSeller());
+		setSeller(new SellerDTO(entity.getSeller()));
 	}
 
 
@@ -84,14 +85,24 @@ public class SaleDTO implements Serializable{
 	}
 
 
-	public Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
 
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
+	
+	public SellerDTO getSeller() {
+		return seller;
+	}
+
+
+	public void setSeller(SellerDTO seller) {
+		this.seller = seller;
+	}
+
 
 
 	@Override
@@ -119,13 +130,5 @@ public class SaleDTO implements Serializable{
 			return false;
 		return true;
 	}
-
-
-	
-	
-	
-	
-	
-	
 
 }

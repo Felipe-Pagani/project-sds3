@@ -14,7 +14,7 @@ const DonutChart = () => {
 
     // Hook: useState - Manter estado no componente
     const [chartData, setChartData] = useState<ChartData>({ labels: [], series: []});
-    
+
     //Hook: useEffect
     //Executar algo na instanciação ou destruição do componente, observar estado
     useEffect(() => {
@@ -29,10 +29,11 @@ const DonutChart = () => {
 
     }, []);
 
-    // //const mockData = {
+    // const mockData = {
     //     series: [477138, 499928, 444867, 220426, 473088],
     //     labels: ['Anakin', 'Barry Allen', 'Kal-El', 'Logan', 'Padmé']
     // }
+    
     const options = {
         legend: {
             show: true

@@ -1,6 +1,7 @@
 package com.devsuperior.dsvendas.entities;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -22,7 +23,7 @@ public class Sale implements Serializable {
 	private Integer visited;
 	private Integer deals;
 	private Double amount;
-	private Date date;
+	private LocalDate date;
 
 	@ManyToOne
 	@JoinColumn(name = "seller_id")
@@ -32,7 +33,7 @@ public class Sale implements Serializable {
 
 	}
 
-	public Sale(Long id, Integer visited, Integer deals, Double amount, Date date, Seller seller) {
+	public Sale(Long id, Integer visited, Integer deals, Double amount, LocalDate date, Seller seller) {
 		super();
 		this.id = id;
 		this.visited = visited;
@@ -74,11 +75,11 @@ public class Sale implements Serializable {
 		this.amount = amount;
 	}
 
-	public Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 
